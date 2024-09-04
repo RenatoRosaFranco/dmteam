@@ -9,6 +9,8 @@ class Contact < Object
 
   def initialize(attributes = {})
     attributes.each { |key, value| send("#{key}=", value) }
+
+    @mailer = ContactMailer
   end
 
   def persisted?
