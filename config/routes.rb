@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   # Contact
   scope "(:locale)", locale: /en|pt|es/ do
-    resources :contacts
+    get 'contact', to: 'contact#index', as: :contact
+    post 'contact', to: 'contact#create', as: :contact_send
   end
 
   # Admin
