@@ -7,7 +7,7 @@ class ContactController < ApplicationController
   end
 
   def create
-    result = Contact::CreateContact.call(contact_params: contact_params)
+    result = Contacts::CreateContact.call(contact_params: contact_params)
 
     if result.success?
       flash[:notice] = I18n.t('flash.contacts.create.success')

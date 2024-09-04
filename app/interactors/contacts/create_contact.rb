@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Contact
+module Contacts
   class CreateContact
     include Interactor
 
@@ -9,8 +9,8 @@ module Contact
     def call
       contact = Contact.new(contact_params)
 
-      if contact.save
-        context.contact = contact
+      if contact.valid?
+        context.send_email
       else
         context.fail!(errors: contact.errors.full_messages.to_sentence)
       end
