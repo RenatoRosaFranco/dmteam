@@ -11,6 +11,12 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Idea
+.ideia/
+
+# Env files
+.env
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
