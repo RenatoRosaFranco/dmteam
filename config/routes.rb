@@ -2,9 +2,11 @@
 
 Rails.application.routes.draw do
 
-  devise_for :users
   # Application
   root to: 'home#index'
+
+  # Authentication
+  devise_for :users
 
   # Contact
   scope "(:locale)", locale: /en|pt|es/ do
